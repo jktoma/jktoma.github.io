@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jason Toma | Mechanical Engineering Portfolio</title>
+<meta name="description" content="Jason Toma, mechanical engineering student at Northeastern University. Career portfolio with co-op work samples, resume and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>:root{color-scheme:light}
+
+/* Layout concept: a quiet editorial portfolio. Serif headings, hairline dividers instead of boxes, and a different arrangement of figures on each page. */
+:root{
+  --bg:#DCEBF8;
+  --surface:#EEF5FB;
+  --ink:#22313F;
+  --muted:#465E75;
+  --line:#B4CDE3;
+  --accent:#2F6FA8;
+  --pastel:#C8DEF1;
+  --frame:#EEF5FB;
+  --font-display:"Newsreader",Georgia,"Times New Roman",serif;
+  --font-body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.75 var(--font-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+img{max-width:100%;display:block}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-family:var(--font-display);font-weight:400;letter-spacing:-.005em;line-height:1.12;margin:0;text-wrap:balance}
+.wrap{max-width:1020px;margin:0 auto}
+.label{font:500 .72rem/1.3 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+header.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line);
+  margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px}
+.brand{font-family:var(--font-display);font-size:1.4rem;text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{font:500 .74rem/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:12px 10px;color:var(--muted);border-bottom:1px solid transparent;white-space:nowrap}
+nav a:hover{color:var(--ink)}
+nav a.on{color:var(--ink);border-bottom-color:var(--ink)}
+
+/* page title */
+.ptitle{padding-block:56px 0;margin-bottom:36px}
+.ptitle h1{font-size:clamp(2.4rem,5vw,3.6rem);margin-bottom:10px}
+.rule{border:0;border-top:1px solid var(--line);margin:0}
+
+/* about */
+.hero{padding-block:48px 48px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.3rem,4.4vw,3.2rem);margin:12px 0 18px}
+.lede{font-size:1.15rem;max-width:32em}
+.headshot{aspect-ratio:4/5;max-width:300px;width:100%;justify-self:end;border:1px solid var(--line);background:var(--pastel);display:grid;place-items:center;position:relative;overflow:hidden}
+.headshot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.headshot span{color:var(--muted)}
+.about{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:64px;padding-block:44px 8px}
+.story{display:grid;gap:20px;max-width:38em}
+.aside{display:grid;gap:40px;align-content:start}
+.aside h2{font-size:1.5rem;margin-bottom:12px}
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.rows>li,.rows>a{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 16px;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.rows a:hover .n{text-decoration:underline;text-underline-offset:4px}
+.rows .n{font-family:var(--font-display);font-size:1.15rem}
+.rows .d{font-size:.88rem;color:var(--muted)}
+.rows.plain>li{display:block;font-size:.98rem}
+
+/* co-op pages */
+.company{display:grid;grid-template-columns:150px minmax(0,1fr);gap:36px;align-items:start;margin-bottom:44px}
+.logo{background:#fff;border:1px solid var(--line);padding:12px;display:grid;place-items:center;aspect-ratio:3/2}
+.logo img{max-height:70px;width:auto;object-fit:contain}
+.company p{max-width:40em}
+.split{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:56px;margin-bottom:56px}
+.split h2,.project h2{font-size:1.6rem;margin-bottom:14px}
+.split h2+.dash{margin-top:0}
+.dash{list-style:none;padding:0;margin:0 0 30px;display:grid;gap:10px}
+.dash li{padding-left:22px;position:relative}
+.dash li::before{content:"";position:absolute;left:0;top:.9em;width:12px;border-top:1px solid var(--accent)}
+.split p{margin-bottom:28px}
+.split p:last-child{margin-bottom:0}
+.project{border-top:1px solid var(--ink);padding-top:28px}
+.project h2{font-size:2rem;margin-bottom:18px}
+.blurb{max-width:42em;margin-bottom:36px}
+figure{margin:0}
+figcaption{font-size:.86rem;line-height:1.5;color:var(--muted);margin-top:8px}
+.frame{background:var(--frame);border:1px solid var(--line)}
+.frame img{width:100%}
+.row3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.row3 .frame{aspect-ratio:4/5}
+.row3 img{height:100%;object-fit:cover}
+.cols{column-count:2;column-gap:28px}
+.cols figure{break-inside:avoid;margin:0 0 28px}
+.photo .frame{aspect-ratio:4/3}
+.photo img{height:100%;object-fit:cover}
+
+/* resume */
+.resume-wrap{max-width:720px;margin:0 auto}
+.resume-wrap .frame{background:#fff}
+.textlink{font:500 .78rem/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:4px;display:inline-block}
+.textlink:hover{color:var(--accent);border-color:var(--accent)}
+
+/* contact */
+.contact{border-top:1px solid var(--line);max-width:760px}
+.crow{display:grid;grid-template-columns:140px minmax(0,1fr) auto;gap:8px 24px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line)}
+.crow .v{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.8rem);overflow-wrap:anywhere}
+.crow a.v{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:6px}
+.crow a.v:hover{text-decoration-color:var(--ink)}
+.copy{font:500 .72rem/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;background:none;border:0;border-bottom:1px solid var(--muted);color:var(--muted);padding:0 0 3px;cursor:pointer}
+.copy:hover{color:var(--ink);border-color:var(--ink)}
+
+.pager{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:64px;padding-top:20px;border-top:1px solid var(--line)}
+.pager a{font:500 .74rem/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+.pager a:hover{color:var(--ink)}
+footer{margin-top:56px;padding-block:22px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px}
+.pb{padding-bottom:8px}
+
+@media (max-width:860px){
+  .hero,.about,.split{grid-template-columns:minmax(0,1fr);gap:36px}
+  .hero{padding-block:44px 32px}
+  .headshot{justify-self:start;max-width:280px}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  .company{grid-template-columns:minmax(0,1fr);gap:18px}
+  .logo{max-width:170px}
+  .row3{grid-template-columns:minmax(0,1fr)}
+  .row3 .frame{aspect-ratio:1/1}
+  .cols{column-count:1}
+  .crow{grid-template-columns:minmax(0,1fr)}
+  .brand{font-size:1.2rem}
+  .ptitle{padding-block:40px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap"><a class="brand" href="index.html">Jason Toma</a><nav aria-label="Site"><a href="index.html" class="on" aria-current="page">About</a><a href="reiser.html">Reiser</a><a href="highres.html">HighRes</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a></nav></div></header>
+<main>
+<div class="wrap pb">
+
+<div class="hero">
+  <div>
+    <p class="label">Mechanical Engineering<br>Northeastern University, May 2027</p>
+    <h1>About Me</h1>
+    <p class="lede">I'm looking for a full-time mechanical design role in robotics, automation, or product development, where I can take parts from concept through release and production.</p>
+  </div>
+  <div class="headshot"><img src="img/headshot.jpg" alt="Jason Toma" onerror="this.remove()"><span class="label">Professional headshot</span></div>
+</div>
+<hr class="rule">
+<div class="about">
+  <div class="story">
+    <p>I'm a mechanical engineering student at Northeastern University graduating in May 2027, with two co-ops in design and manufacturing environments and a strong foundation in SolidWorks, drawing and documentation, and prototyping.</p>
+    <p>At HighRes Biosolutions, I designed 3D-printed Onyx sensor mount fixtures and adapters for an automated storage system, then drew each part, built the bills of material, and released it through engineering change orders in Bluestar PLM. At Robert Reiser &amp; Co., I modeled product extrusion inserts that were 3D-printed and tested for customers, managed drawings in SolidWorks PDM, and assembled machine components that shipped to customers. Working across design, documentation, and hands-on assembly showed me how much a part's design affects how easily it can be built.</p>
+    <p>I am currently working with my capstone team to develop an automatic volleyball net tensioner that attaches to existing posts and cable systems, which has involved patent research, material selection, and load analysis.</p>
+    <p>Outside of class I studied abroad at Yonsei University in Seoul, and I spend my free time rock climbing, playing golf, and learning songs on guitar. I'm looking for mechanical design roles where I can own a part from concept through production.</p>
+  </div>
+  <div class="aside">
+    <div>
+      <h2>Skills</h2>
+      <ul class="rows plain">
+        <li>SolidWorks and SolidWorks PDM</li>
+        <li>Bluestar PLM</li>
+        <li>Drawings and bills of material</li>
+        <li>3D printing and prototyping</li>
+        <li>FEA</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Co-op experience</h2>
+      <div class="rows">
+        <a href="highres.html"><span class="n">HighRes Biosolutions</span><span class="d">Jan to June 2025</span></a>
+        <a href="reiser.html"><span class="n">Robert Reiser &amp; Co.</span><span class="d">Jan to June 2024</span></a>
+      </div>
+    </div>
+    <div>
+      <h2>Capstone</h2>
+      <ul class="rows plain"><li>Automatic volleyball net tensioner for existing posts and cable systems</li></ul>
+    </div>
+  </div>
+</div>
+
+
+</div>
+<div class="wrap"><footer><span>© 2026 Jason Toma</span><span>Mechanical Engineering, Northeastern University</span></footer></div>
+</main>
+
+</body>
+</html>

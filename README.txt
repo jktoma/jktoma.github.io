@@ -1,0 +1,1 @@
+Jason Toma portfolio. Upload everything in this folder (the HTML files, the img folder and the resume PDF) to the root of a GitHub repository, then turn on GitHub Pages. To add a headshot, put a file named headshot.jpg inside the img folder.
